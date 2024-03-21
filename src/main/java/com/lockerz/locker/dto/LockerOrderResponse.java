@@ -1,24 +1,43 @@
 package com.lockerz.locker.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.io.Serializable;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class LockerOrderResponse implements Serializable {
 
     private Double totalBilling;
     private String email;
+    private Double refund;
+    private String message;
 
-    private List<LockerDto> lockerList;
+    private List<ReqRes> lockerList;
 
     public LockerOrderResponse() {
     }
 
-    public LockerOrderResponse(Double totalBilling, String email) {
-        this.totalBilling = totalBilling;
-        this.email = email;
+    public Double getRefund() {
+        return refund;
+    }
+
+    public void setRefund(Double refund) {
+        this.refund = refund;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setLockerList(List<ReqRes> lockerList) {
+        this.lockerList = lockerList;
     }
 
     public Double getTotalBilling() {
@@ -37,11 +56,9 @@ public class LockerOrderResponse implements Serializable {
         this.email = email;
     }
 
-    public List<LockerDto> getLockerList() {
+    public List<ReqRes> getLockerList() {
         return lockerList;
     }
 
-    public void setLockerList(List<LockerDto> lockerList) {
-        this.lockerList = lockerList;
-    }
+
 }

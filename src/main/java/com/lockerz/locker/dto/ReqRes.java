@@ -12,6 +12,8 @@ import java.io.Serializable;
 public class ReqRes implements Serializable {
 
     private String error;
+    private String orderId;
+
     private String message;
     private String token;
     private String refreshToken;
@@ -26,9 +28,22 @@ public class ReqRes implements Serializable {
     private String phoneNumber;
 
     private String lockerCode;
-    private int quantity;
+    private Integer quantity;
+
+    private Double refund;
+
+    private Double finesDue;
+
+    private Integer totalPassAttemps;
+
+    private Double totalDeposit;
+
 
     public ReqRes() {
+    }
+
+    public ReqRes(String orderId) {
+        this.orderId = orderId;
     }
 
     public String getError() {
@@ -143,11 +158,51 @@ public class ReqRes implements Serializable {
         this.lockerCode = lockerCode;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public Double getRefund() {
+        return refund;
+    }
+
+    public void setRefund(Double refund) {
+        this.refund = refund;
+    }
+
+    public Double getFinesDue() {
+        return finesDue;
+    }
+
+    public void setFinesDue(Double finesDue) {
+        this.finesDue = finesDue;
+    }
+
+    public Integer getTotalPassAttemps() {
+        return totalPassAttemps;
+    }
+
+    public void setTotalPassAttemps(Integer totalPassAttemps) {
+        this.totalPassAttemps = totalPassAttemps;
+    }
+
+    public Double getTotalDeposit() {
+        return totalDeposit;
+    }
+
+    public void setTotalDeposit(Double totalDeposit) {
+        this.totalDeposit = totalDeposit;
     }
 }

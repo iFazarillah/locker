@@ -10,10 +10,13 @@ public class LockerOrderRequest implements Serializable {
 
     private String email;
     private int totalOrder;
+    private Double totalDeposit;
     private List<ReqRes> dataOrder;
 
     public LockerOrderRequest() {
     }
+
+
 
     public LockerOrderRequest(String email, int totalOrder, List<ReqRes> dataOrder) {
         this.email = email;
@@ -43,5 +46,13 @@ public class LockerOrderRequest implements Serializable {
 
     public void setTotalOrder(int totalOrder) {
         this.totalOrder = totalOrder;
+    }
+
+    public Double getTotalDeposit() {
+        return totalDeposit;
+    }
+
+    public void setTotalDeposit(Double totalDeposit) {
+        this.totalDeposit = totalDeposit;
     }
 }

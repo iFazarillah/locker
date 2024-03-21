@@ -25,4 +25,30 @@ public class LockerOrderController extends BaseController {
     public ResponseEntity<Map<String, Object>> orderLocker(@RequestBody LockerOrderRequest orderRequest) throws Exception {
         return responseGeneralSuccess(lockerOderService.orderLocker(orderRequest));
     }
+
+    @PostMapping("/deposit")
+    public ResponseEntity<Map<String, Object>> depositMoney(@RequestBody LockerOrderRequest orderRequest) throws Exception {
+        return responseGeneralSuccess(lockerOderService.depositMoney(orderRequest));
+    }
+
+    @PostMapping("/lock")
+    public ResponseEntity<Map<String, Object>> lockLocker(@RequestBody ReqRes request) throws Exception {
+        return responseGeneralSuccess(lockerOderService.lockLocker(request));
+    }
+
+    @PostMapping("/lock/bulk")
+    public ResponseEntity<Map<String, Object>> bulkLockLocker(@RequestBody List<ReqRes> request) throws Exception {
+        return responseGeneralSuccess(lockerOderService.bulkLockLocker(request));
+    }
+
+    @PostMapping("/unlock")
+    public ResponseEntity<Map<String, Object>> unlockLocker(@RequestBody ReqRes request) throws Exception {
+        return responseGeneralSuccess(lockerOderService.unlockLocker(request));
+    }
+
+    @PostMapping("/unlock/deposit")
+    public ResponseEntity<Map<String, Object>> unlockLockerByDeposit(@RequestBody ReqRes request) throws Exception {
+        return responseGeneralSuccess(lockerOderService.unlockLockerByDeposit(request));
+    }
+
 }
